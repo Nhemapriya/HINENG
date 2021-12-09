@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+        <style>
+            body{
+                background: url("https://cdn.pixabay.com/photo/2016/03/22/15/31/background-image-1273097_1280.jpg") no-repeat;
+                background-size: cover;
+                color: white;
+                height: 100vh;
+            }
+        </style>
+
+    </head>
+
+   
+
+    <body>
+       <center> <h1> Let's explore features </h1> </center>
+        <div class="container" id="cont" align="center">
+            <form action="/">
+                    <h3><b> Enter text with short forms and emojis 😃 </b></h3>
+                    <hr/>
+                <div class="form-group">
+                   <h3> <label for="title"> Input text </label> </h3>
+                    <p> {{text}} </p>
+                </div>
+
+                <div class="form-group">
+                   <h3> <label for="title"> Manipulated text </label> </h3> 
+                    <p> {{answer}} </p>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary"> Home </button>
+              
+        </form>
+        </div>
+    </body>
+</html>

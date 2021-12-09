@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            body{
+                background: url("https://cdn.pixabay.com/photo/2016/03/22/15/31/background-image-1273097_1280.jpg") no-repeat;
+                background-size: cover;
+                color: white;
+                height: 100vh;
+            }
+        </style>
+    </head>
+
+    <body>
+       <center> <h2> Let's explore features </h2> </center>
+        <div class="container" id="cont">
+
+           
+                 <h3><b> Analyse the NER aspects </b></h3>
+
+                 <html>
+                    <body>
+                        {% for value in result %}
+                
+                        <h3>
+                            {{ value }}
+                            <hr/>
+                        </h3>
+                        {% endfor %}
+                    </body>
+                </html>
+                
+                <button type="submit" class="btn btn-primary"> HOME </button>
+
+       
+        </div>
+    </body>
+</html>

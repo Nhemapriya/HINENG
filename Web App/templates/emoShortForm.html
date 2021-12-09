@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+   
+
+    <body>
+       <center> <h2> Enter text with short forms and emojis 😃  </h2> </center>
+        <div class="container" id="cont">
+
+            <form action="/esf" method="POST">
+                    <h3><b> Enter your text </b></h3>
+                <div class="form-group">
+                    <label for="title"> Input text </label>
+                    <input type="text" class="form-control" id="text" name="text" placeholder="Enter the input text">
+                </div>
+
+                <div class="form-group">
+                    <label for="title"> View transliterated text </label>
+                    <input type="text" class="form-control" id="intermediate" name="intermediate" placeholder="result appears here">
+                </div>
+
+                <!-- <div class="form-group">
+                    <label for="title"> Bleu Score </label>
+                    <input type="text" class="form-control" id="score" name="score" placeholder="Know the Bleu Score">
+                </div> -->
+
+                <button type="submit" class="btn btn-primary"> SUBMIT </button>
+
+        </form>
+        </div>
+    </body>
+</html>

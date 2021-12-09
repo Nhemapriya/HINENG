@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Translation Bot (Pre-defined intents)</title>
+    <style>
+      body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.box{
+  width: 450px;
+  height: 390px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid #303030; */
+  box-shadow: 5px 5px 20px #000;
+  border-radius: 20px;
+}
+.top{
+  width: 100%;
+  height: 80px;
+  background: #2a2f32;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.top h1{
+  color: #fff;
+  margin: 0;
+  font-size: 30px;
+  text-align: center;
+  /* padding-left: 20px; */
+  padding-top: 10px;
+  font-family: monospace;
+}
+.mid{
+  width: 100%;
+  height: 260px;
+  background: #00af9c;
+  /* margin-top: -18px; */
+}
+.mid .chat{
+  width: 100%;
+  /* padding-top: 0px; */
+}
+.mid .chat h2{
+  margin: 0;
+  font-size: 30px;
+  color: #000;
+  padding: 30px 20px;
+}
+.mid .chat p{
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  background: #063b36;
+  padding: 50px 20px;
+  letter-spacing: 0.04em;
+}
+.input{
+  width: 100%;
+  height: 79px;
+  overflow: hidden;
+  /* background: #090e11; */
+}
+.input input{
+  width: 100%;
+  height: 70px;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  padding-left: 30px;
+  padding-top: 0;
+  font-family: cursive;
+  background: #090e11;
+  color: #fff;
+}
+    </style>
+  </head>
+
+  <script>
+    function talk(){
+  var know = {
+    "amasteN" : "Hello!",
+    "Aap kaise hain" : " How are you?",
+    "Aapaka kaam kaisa chal raha hai?" : "How is your work going?",
+    "Theek hai" : "ok",
+    "Aap se kal milata hoon" : "See you tomorrow....",
+    "Kal ho naa ho":"Tomorrow may not be there :(",
+    "Vishvaas rakhen":"Be confident",
+    "Meree baat maano":"Do as I say",
+    "Kya tumhaare paas khaane ke lie kuchh hai":"Do you have anything to eat?",
+    "Come on boys, waqt hai shine karne ka":"Come on boy, it's time to dump her",
+    "Yeh heart Maange More!":"This heart asks for more!",
+    "Woh to mai sambhal lunga":"I'll handle that",
+    "Come over to my place, saath baithke chai-wai peete hai":"Over to my place, they sit together and drink tea",
+    "yeh hai ek sample":"this is a sample",
+    "Yeh to bohot tough hai":"it's too tuff",
+    "Apne views share karna naa bhule comment karke":"Don't forget to share your views by commenting",
+    "Iss trha lunch chor ke mat jaa":"Don't go to the lunch thief like this",
+     "Aap itna confuse q lag rhe ho":"why are you looking so confused",
+     "Me aapko ek Example deta hu":"I will give you an example",
+     "Aap blogging Q kar rhe h?":"Why are you blogging?",
+     "Mere pass iss type ke question bhi aane lage":"I started getting these type of questions too",
+     "Mere boss ne ek assignment di hai...pura weekend nikal jayega":"My boss has given an assignment...the whole weekend will pass",
+     "Mujhe aapka order track karne dein":"let me track your order",
+     "Guys, chale? or we’ll be late. zyaada time nahin hain":"Guys, go? And we'll be late. don't have much time",
+     "polis ne us ko pakad liya":"the police caught him",
+     "fon bohot baar baja":"phone rang a lot",
+     "vo mera intazaar kar rahee hai":"she is waiting for me",
+     "Jarmanee ki team kya sahi khelti hai futbol":"germany team does football play right",
+     "pulis steshan jaake complaint likhata hu":"I go to the police station and write a complaint",
+     "Tumahare jamndin pe tumhre liye Happy Birthday party karenge":"Will have a happy birthday party for you on your jamandin",
+     "Kal aaungi phir se mai shaam ke 7pm":"I will come again tomorrow at 7pm",
+     "Mujhe smjh ni aa rha, aage kya kru.  ":"I do not understand what to do next.",
+     "Arey ankit ka bdy aa rha h party krege ":"Hey Ankit's big coming party will do",
+     "Tum apna youtube channel kyu ni shuru krte.":"Why don't you start your own YouTube channel?",
+     "Mujhe subh call krke jldi utha dena, kl se early morning se gym jana hai":"Call me early in the morning to wake me up, I have to go to Gaim from early morning tomorrow",
+     "Tum kya routine follow krte ho.":"What routine do you follow?",
+     " Aapne insta profile pr bio acchha likha huaa h":"You have well written bio on insta profile",
+     "Tumhare sath wo ldki kaun thi ?":"who was that girl with you?",
+     "Maine FB pr photos dekhi tumhari, kaha ghum rhe ho.":"I saw your photos on the fob, where are you roaming.",
+     "Ye movie to ekdum Hollywood ki us movie ki copy bna di hai":"This movie has been made a copy of that Hollywood movie.",
+     "Mujhe us car ka design accha lgta hai":"i like the design of that car",
+     "Maine list m aapka bhi nam dekha tha":"I saw your name in the list too",
+     "Us restaurant ka khana achcha h vahi chlte h sab.":"The food of that restaurant is good: well let's go all.",
+     "Ye flowers bht sundar lg rhe h":"These flowers are looking so beautiful",
+     "Mere phone m Rs. 500/-  ka recharge kr do.":"juice in my phone. Do recharge of 500/-.",
+
+     "Meri car m petrol km hai to petrol pump jana pdega.":"If there is less petrol in my car then I have to go to the petrol pump.",
+     "Tumne poem badi achhi likhi hai, aage chlkr poet bn skte ho.":"Tumne poem badi achhi likhi hai, aage chlkr poet bn skte ho.",
+     "Tum akele mkt ho aao, mujhe aane m late ho jayega.":"You are free alone, I will be late in coming.",
+     "Aapke clg k pas wali shop se ek pen drive le aaoge?":"Will you get a pen drive from the shop near you?",
+    "मुझे तोह दूध फ्री mein milta hai" : "I get milk for free",
+"yaar, mistake हो गयी मुझसे "    :    "yaar, I made a mistake",
+"Ae tujhe hinglish nhi aati kya? Ruk, I'll teach you" : "Hey don't you know Hinglish? Stop, I'll teach you",
+"You naughty ladke....अभी मज़ा चखाती हु"  :   "You naughty ladke..."  ,
+"kya haal hain aapke? Ummeed karta hoon sab thik chal raha hai." : "How are you doing? I hope everything is going well.",
+"Thode fruits और सब्जी ला दे"  :  "Bring some fruits and vegetables",
+"17 Tarike WordPress Site ki Speed badhane ke" : "17 Ways to Increase WordPress Site Speed",
+"वह sirf timepass करती रहती है " :  "She keeps doing sirf timepass",
+"hum kal ghoomne jaa rahe hai" : "We're going for a walk tomorrow",
+"कल afternoon 3pm मिलते है" :  "See you tomorrow afternoon at 3pm",
+ "पूरी filmi है वोह "  : "The whole filmi is that",
+"DuLhaN kii viDaaii ke Samay biLkuL fiLmii maahauL ho gayaa THaa." : "At the time of the bride's farewell, there was a complete filmy atmosphere.",
+"aaj vaaLii muuvii baS taaim-paaS THii." : "Today's movie was just a time-pass.",
+"puNiit ekaDam baNdaL aaDamii hai." : "Puneet is a very bundled man.",
+"Siimaa, Tum To iS dreS men ekaDam hiiroiN Lag rahii ho." : "Seema, you look like a heroine in this dress.",
+"bhiid aur garmii Se Dimaag puncture ho gayaa" : "The brain was punctured by the crowd and the heat",
+"ye bacche To biLkuL jangaLii hain." : "These kids are absolutely wild.",
+"TabiiyaT kaiSii hai? ekaDam farSt-kLaaS!" : "How are you doing? Very first-class!",
+"kamaL kii To THag-Laaif caL rahii hai." : "It's amazing to have a thug-life call.",
+"kyaa haaL hai, bauS!" : "How are you, Boss!",
+"aaj To Tum ekaDam SauLid Dikh rahe ho." : "You look solid today.",
+"har appraisal me Boss Log hume koii Na koii LauLiipaup De DeTe hain, lekin hike nahi dete" : "In every appraisal the bosses give us some lollipop but don't hesitate",
+"kaL ham Sab pikcar DekhaNe jaa rahe hain." : "Tomorrow we're all going to see the picture.",
+"zyaaDaa hiiropanTii maT Dikhaao." : "Too much heropanti: don't show.",
+"Tum kiS kauLej Se paaS-aaut ho" : "Which college are you from",
+"iTaNii garmii men bhejaa-fraaii ho gayaa" : "Fry has been sent in so much heat",
+"aapakaa gud-Nem kyaa hai?" : "What's your jug-name?",
+"Tren delay ho gyi h" : "Train has been delayed",
+"Chak kaufii peete hai" : "Chuck drinks coffee",
+"baaTHaruum DaahiNi or hai" : "The bathroom is on the right",
+"hamaaraa tiivii Do DiN Se kharaab hai" : "Our TV is bad for two days",
+"StesaN yahaan Se caar kiLomiitar Duur hai" : "Stesson is four kilometers from here",
+"juuS frij men rakh Do." : "Put the juice in the fridge.",
+"taum kruuz ne misaN impauSibaL me sahi kaam kiya hai" : "Tom Cruise Did The Right Thing In Mission Impossible",
+"biyaunSe ki 200m Insta followers hai" : "Beyoncé Has 200m Insta Followers",
+"Sir mene form 2 week pahle submit kiya tha.." : "Sir, I submitted the form 2 weeks ago..",
+"Is list ko update kab kroge aap" : "When will you update this list",
+"Unki team ke liye bura lag raha hai, they should have won" : "Feeling Bad For His Team, They Should Have Won",
+"Main tujhe call kar raha tha, but tera phone switch off tha" : "I was calling you but your phone was switched off",
+"Ek new shop open hui hai mere colony main" : "A new shop has opened in my colony",
+"मेरे computer की processing speed kaafi slow हैं " :  "The processing speed of my computer is kaafi slow",
+"Hum do din k liye Jaipur ghumne ja rhe h." : "We are going to visit Jaipur for two days.",
+"Tum kya phn kr function m chaloge" : "What will you wear to the function",
+"Tumne kaunsi bike li hai" : "Which bike did you get?",
+    "asahaneey marod hotee hai":	"there is unbearable cramp .",
+"rogee ka jee ghabaraata hai .":	"patient feels nervous .",
+"rogee durbal hota jaata hai .":	"patients becomes weak .",
+"badboodaar mavaad risata hai ."	:"smelly pus oozes out .",
+"soojan mein dard hota hai .":	"pain occurs in swelling .",
+"yeh kophee se bantee hai .":	"it is prepared by coffee .",
+"usaka upaay enima nahin hai ."	:"its cure is not enema .",
+"iska said iphekt nahin hota .":	"it has no side effect .",
+"sunakar chaukie nahin"	:"do not get alarmed on hearing .",
+"dhoop rogaanunaashak hai .":	"sunshine is disinfectent .",
+"raktadaan kaun kar sakta hai ?"	:"who can donate blood ?",
+"yeh behad phaaydemand hai .":	"this is very beneficial .",
+"jalavaayu bahut sard hai ."	:"the climate is very cold .",
+"yeh sirf bheed nahin hai ."	:"this is not just a crowd .",
+"yamuna dheer - gambheer hai .":	"yamuna is calm - deep .",
+"kul makaan pakke hain ."	:"overall houses are concrete .",
+"gupha do bhaag mein hain .":	"the cave is in two parts .",
+"bhoomi badee upajaoo hai ."	:"the land is very fertile .",
+"vahaan himapaat hua tha .":	"there snowfall took place .",
+"vah mera chachera bhaee nahin hai."	:"he isn't my cousin.",
+"koee meree madad nahin kar sakata."	:"no one can help me.",
+"usakee kahaanee sachchee thee kya?"	:"was his story true?",
+"use bahut akelaapan mahasoos hua."	:"he felt very lonely.",
+"mainne puraanee gaadee khareedee."	:"i bought an old car.",
+"meree bahan ke paas naukaree hai."	:"my sister has a job.",
+"tum usapar bharosa kar sakate ho."	:"you may rely on him.",
+"tumhen man lagaakar padhana hoga."	:"you must study hard.",
+"mainne tumhen bataaya nahin tha?"	:"didn't i tell you so?",
+"usane paison ke lie shaadee kee.":	"he married for money.",
+"vah kaamayaab hona chaahata tha."	:"he wanted to succeed.",
+"mujhe pet mein dard ho raha hai.":	"i have a stomachache.",
+"mainne apanee oongalee kaat lee.":	"i just cut my finger.",
+"chaadaren geeleen lagateen hain.":	"the sheets feel damp.",
+"tum vah saabit nahin kar sakate."	:"you can't prove that.",
+"kya aapako apana naap pata hai?":	"do you know your size?",
+"vah pichhale hafte beemaar tha."	:"he was sick last week.",
+"kya mairee tumhaaree betee hai?":	"is mary your daughter?",
+"tumhaaree ghadee sahee hai kya?"	:"is your watch correct?",
+"saare panchhee ud nahin sakate.":	"not all birds can fly.",
+"unhonne meree ka mazaak udaaya."	:"they made fun of mary.",
+"unhonne madad ke lie chillaaya."	:"they shouted for help.",
+"jaisee karanee vaisee bharanee."	:"you reap what you sow.",
+"mujhe ek bladee meree chaahie."	:"i'd like a bloody mary.",
+"mere paapa bahut achchhe hain."	:"my father is very nice.",
+"vah gareeb hai, par khush hai.":	"she is poor, but happy.",
+"vah bahut bak-bak karatee hai.":	"she prattles on and on.",
+"vah tel mein pakaaya gaya hai.":	"that was cooked in oil.",
+"bachche ne rona band kar diya.":	"the baby ceased crying.",
+"yah battee kaam nahin karatee.":	"the light doesn't work.",
+"aap teevee dekhaten hain kya?":	"do you watch television?",
+"main tumhen ek tohafa doonga.":	"i'll give you a present.",
+"vah ek baar phir der se aaee.":	"she was late once again.",
+"bas abhee tak aaee nahin hai.":"the bus hasn't come yet.",
+"ghar aag mein lipata hua tha.":	"the house was in flames.",
+"main iseelie vaapas aaya tha.":	"this is why i came back.",
+"usakee raashtreeyata kya hai?":	"what is his nationality?",
+"tumhaare paas kalam hai kya?":	"do you have a pen on you?",
+"vah meree baat nahin sunega.":	"he will not listen to me.",
+"main aur nahin chal sakatee.":	"i can't walk any further.",
+"mera bhaag jaane ka man hua.":	"i felt like running away.",
+"mujhe dil kee beemaaree hai.":	"i have a heart condition.",
+"main phirase nahin karoonga.":	"i will never do it again.",
+"loha sone se sakht hota hai.":	"iron is harder than gold.",
+"ve sab jimakhaane mein mile.":	"they gathered in the gym.",
+"yah raasta bahut patala hai.":	"this road is very narrow.",
+"tokyo bahut bada shahar hai.":	"tokyo is a very big city.",
+"ham hava ke bina mar jaenge.":	"we would die without air.",
+"aaj sev saste bik rahe the.":	"apples were on sale today.",
+"tumhe turant jaana chaahie.":	"you had better go at once.",
+"vah pulis afasar ban gaya.":	"he became a police officer.",
+"usane kaam apane-aap kiya.":	"he did the work on his own.",
+"battee band karado, pleez.":	"turn off the light, please.",
+     };
+  var user = document.getElementById('userBox').value;
+    document.getElementById('chatLog').innerHTML = user + "<br>";
+  if (user in know) {
+    document.getElementById('chatLog').innerHTML = know[user] + "<br>";
+  }else{
+    document.getElementById('chatLog').innerHTML = "Sorry,I didn't understand <br>";
+  }
+}
+  </script>
+  <body>
+
+
+    <div class="box">
+      <div class="top">
+        <h1>HINENG</h1>
+      </div>
+      <div class="mid">
+        <div class="chat">
+          <h2>Convert Hinglish to english ...</h2>
+          <p id="chatLog"> Let's Chat </p>
+        </div>
+      </div>
+      <div class="input">
+        <input type="text" id="userBox" onkeydown="if(event.keyCode == 13){ talk()}" placeholder="Type your Question">
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="myscript.js"></script>
+  </body>
+</html>
