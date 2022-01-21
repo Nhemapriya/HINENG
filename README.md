@@ -1,4 +1,4 @@
-# HINENG-Code-Files
+# Analysis of Hinglish text - obtaining english context
 
 1) The dataset folder contains the raw dataset used for training the model.
 2) The web app folder contains the essential files for running the flask app
